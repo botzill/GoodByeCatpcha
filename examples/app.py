@@ -178,6 +178,7 @@ async def get_solution(request):
         else:
             if pageurl and sitekey:
                 coro = partial(work, pageurl, sitekey)
+                result = None
                 async with TaskRerun(coro, duration=SOLVE_DURATION) as t:
                     result = await t.start()
                 if result:
