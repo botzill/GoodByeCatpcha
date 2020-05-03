@@ -145,7 +145,8 @@ async def work(pageurl, sitekey, loop):
         "args": ["--timeout 5"],
         "handleSIGINT": False,
         "handleSIGTERM": False,
-        "handleSIGHUP": False
+        "handleSIGHUP": False,
+        "headless": True
     }
 
     client = Solver(
